@@ -1,3 +1,20 @@
+<div class="line">
+  <mat-form-field appearance="outline">
+    <mat-label>Сортировка пользователей</mat-label>
+    <mat-select #list (selectionChange)="sort(list.value)">
+      <mat-option value="0">От А до Я</mat-option>
+      <mat-option value="1">От Я до А</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Поиск</mat-label>
+    <input matInput placeholder="Найти пользователя" #query (keyup.enter)="search(query.value)">
+    <mat-icon matSuffix (click)="search(query.value)">search</mat-icon>
+  </mat-form-field>
+
+</div>
+
 
 <mat-selection-list #users>
     <mat-list-option 
